@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_ctaacxzb.json"  background="transparent"  speed="1"  style="width: 350px; height: 350px;"  loop autoplay></lottie-player>
+					<!-- <img src="images/img-01.png" alt="IMG"> -->
+				</div>
+
+				<form class="login100-form validate-form" method="post" name="google-sheet" autocomplete="off">
+					<span class="login100-form-title">
+						Enter Resource Details
+					</span>
+
+					<div class="wrap-input100">
+						<input class="input100" type="text" name="Website-Name" placeholder="Enter Site Name">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-user" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100">
+						<input class="input100" type="text" name="URL" placeholder="Enter Site Link">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-link" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="wrap-input100" >
+						<input class="input100"  name="Description" rows="20" cols="40" placeholder="Description Of Site" />
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span> 	
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<input class="login100-form-btn" name="submit" type="submit" value="Login" />
+							
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	<script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbzbJD6Govt496PJg4rITb5K0T-NYQqfaMD2oyDAb3fy7z2RpcZIflNTcmWftUSGIhWwjA/exec'
+		const form = document.forms['google-sheet']
+	  
+		form.addEventListener('submit', e => {
+		  e.preventDefault()
+		  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			.then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+			.catch(error => console.error('Error!', error.message))
+		})
+		console.log(new FormData(form));
+	  </script>
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
